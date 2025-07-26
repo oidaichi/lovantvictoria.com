@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMC2D3Z12V"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-ZMC2D3Z12V');
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVANTVICTORIA - 企業向け生成AI研修サービス</title>
+    <style>
+        /* リセットCSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .logo span {
+            color: #4285f4;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        /* ハンバーガーメニュー（モバイル用） */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        /* 生成AIご説明動画セクション */
+        .ai-training-video-section {
+            margin: 40px 0;
+            font-family: 'Yu Gothic', 'Hiragino Sans', Arial, sans-serif;
+        }
+        
+        .ai-video-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .ai-video-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .ai-video-container video {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .ai-controls-note {
+            margin-top: 10px;
+            color: #888;
+            font-size: 12px;
+        }
+        
+        /* スマホ向けレスポンシブ対応 */
+        @media (max-width: 768px) {
+            .ai-training-video-section {
+                margin: 20px 0;
+            }
+            
+            .ai-video-container {
+                padding: 20px;
+                border-radius: 8px;
+            }
+            
+            .ai-video-container video {
+                width: 100%;
+                max-width: none;
+                border-radius: 6px;
+            }
+            
+            .ai-video-container h2 {
+                font-size: 20px;
+            }
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 20px 100px;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #4285f4;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #f2f2f2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #4285f4;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* 会社紹介セクション */
+        .about {
+            background-color: #ffffff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* サービス内容セクション */
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            height: auto;
+            background-color: #4285f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .service-icon img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1408/768;
+            display: block;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* パーススライダーセクション */
+        .perspective-showcase {
+            background-color: #ffffff;
+            padding: 80px 20px;
+        }
+
+        .perspective-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .perspective-intro {
+            margin-bottom: 50px;
+        }
+
+        .perspective-intro h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .perspective-intro h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #4285f4;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .perspective-intro p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .cost-comparison {
+            <!--background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);-->
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cost-comparison .price-highlight {
+            font-size: 48px;
+            color: #4083F4;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.3s ease;
+            width: 600%; /* 6スライド分 */
+        }
+
+        .slide {
+            flex: 0 0 16.666667%; /* 100% / 6 = 16.666667% */
+            width: 16.666667%;
+            background: white;
+            padding: 30px;
+            box-sizing: border-box;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;  /* 水平方向の中央配置 */
+        }
+
+        .slide-content {
+              text-align: center;
+		    width: 100%;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		            
+        }
+
+        .slide-content h3 {
+            font-size: 20px;
+            <!--margin-bottom: 15px;-->
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #######;
+            color: black;
+        }
+
+        .perspective-image {
+            max-width: 90%;  /* コンテナ幅の90%に制限 */
+    margin: 0 auto;  /* 中央配置 */
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-dot.active {
+            background-color: #4285f4;
+        }
+
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(66, 133, 244, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .slider-arrows:hover {
+            background-color: rgba(66, 133, 244, 1);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* スマホ向けレスポンシブ対応 */
+        @media (max-width: 768px) {
+            .perspective-showcase {
+                padding: 50px 15px;
+            }
+
+            .perspective-intro h2 {
+                font-size: 24px;
+            }
+
+            .cost-comparison {
+                font-size: 16px;
+                padding: 20px;
+            }
+
+            .cost-comparison .price-highlight {
+                font-size: 20px;
+            }
+
+            .slide {
+                padding: 20px 15px;
+            }
+
+            .slide-content h3 {
+                font-size: 18px;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+
+            .perspective-image {
+                height: 200px;
+            }
+
+            .slider-arrows {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* より小さいスマホ用 */
+        @media (max-width: 480px) {
+            .perspective-intro h2 {
+                font-size: 20px;
+            }
+
+            .cost-comparison {
+                font-size: 14px;
+                padding: 15px;
+            }
+
+            .cost-comparison .price-highlight {
+                font-size: 18px;
+            }
+
+            .slide {
+                padding: 15px 10px;
+            }
+
+            .slide-content h3 {
+                font-size: 16px;
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+
+            .perspective-image {
+                height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            }
+
+            .slider-arrows {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+
+        /* タブレット用 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .perspective-showcase {
+                padding: 60px 20px;
+            }
+
+            .perspective-intro h2 {
+                font-size: 28px;
+            }
+
+            .cost-comparison {
+                font-size: 17px;
+                padding: 25px;
+            }
+
+            .slide {
+                padding: 25px;
+            }
+
+            .perspective-image {
+                height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            }
+        }
+        
+        /* 助成金活用セクション */
+        .subsidy {
+            background-color: #ffffff;
+        }
+        
+        .subsidy-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .subsidy-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .subsidy-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            aspect-ratio: 1576/742;
+            object-fit: contain;
+        }
+        
+        .subsidy-text {
+            flex: 1;
+            min-width: 300px;
+            padding-left: 30px;
+        }
+        
+        .subsidy-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .subsidy-steps {
+            margin-top: 20px;
+        }
+        
+        .subsidy-step {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: #4285f4;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            flex: 1;
+        }
+        
+        /* お客様の声セクション */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: #f2f2f2;
+            font-family: serif;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: #e0e0e0;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo h3 span {
+            color: #4285f4;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-info {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4285f4;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+        
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo">LOVANT<span>VICTORIA</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#about">会社紹介</a></li>
+                    <li><a href="#services">サービス内容</a></li>
+                    <li><a href="https://lovantvictoria.com/articles">記事</a></li>
+                    <li><a href="#testimonials">お客様の声</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="company.html">会社概要</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <h1>企業の未来を創る生成AI研修</h1>
+        <p>LOVANTVICTORIAは企業向け生成AI研修を提供し、ビジネスの可能性を広げます。助成金を活用して、最先端の技術を手軽に学べます。</p>
+        <a href="#contact" class="btn">無料相談はこちら</a>
+    </section>
+    
+    <!-- 生成AIご説明動画セクション -->
+	<div class="ai-video-container">
+        <h2>生成AI研修のご説明</h2>
+        <div class="ai-controls-note">
+            弊社研修をご理解いただくため、音声をONにしてご覧ください。
+        </div>
+        
+        <video controls preload="metadata" autoplay muted playsinline>
+            <source src="生成AI研修のご紹介.mp4" type="video/mp4">
+            お使いのブラウザはこの動画形式をサポートしていません。
+        </video>
+    </div>
+
+    <!-- 会社紹介セクション -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>会社紹介</h2>
+                <p>最新の生成AI技術を活用した企業研修のエキスパート</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text" style="width: 100%;">
+                    <h3>生成AIの力で、ビジネスを次のレベルへ</h3>
+                    <p>LOVANTVICTORIAは、企業向け生成AI研修を専門とする会社です。急速に進化する生成AI技術を企業に導入するための実践的なノウハウを提供しています。</p>
+                    <p>私たちは、単なる技術的な知識だけでなく、ビジネスにおける実践的な活用方法に重点を置いた研修を行っています。企業がAIを活用して業務効率化、コスト削減、イノベーション創出を実現できるよう、サポートします。</p>
+                    <p>さらに、研修費用の負担を軽減するために、各種助成金制度の活用方法についてもアドバイスしています。未来のビジネスを創造するパートナーとして、お客様と共に成長していきます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-title">
+        <h2>弊社社員</h2>
+        
+        <div class="image-container">
+            <img src="img/amano_profile.png" alt="天野プロフィール画像" class="responsive-image">
+        </div>
+        <div class="image-container">
+            <img src="img/oikawa_profile.png" alt="及川プロフィール画像" class="responsive-image">
+        </div>
+    </section>
+    
+    <!-- サービス内容セクション -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>サービス内容</h2>
+                <p>あらゆる業種・職種に対応した生成AI研修プログラム</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/img1.jpg" alt="基礎研修アイコン">
+                    </div>
+                    <div class="service-content">
+                        <h3>生成AI基礎研修</h3>
+                        <p>生成AIの基本概念から実際の活用方法まで、基礎からしっかり学べるコースです。AIの仕組みや特性を理解し、ビジネスでの活用イメージを構築します。</p>
+                        <p>対象：全社員・管理職・経営層</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/img2.jpg" alt="応用研修アイコン">
+                    </div>
+                    <div class="service-content">
+                        <h3>業務特化型AI活用研修</h3>
+                        <p>営業、マーケティング、人事、製造など、各部門・業務に特化した生成AIの活用方法を学びます。現場の課題解決に直結する実践的な内容です。</p>
+                        <p>対象：各部門担当者・マネージャー</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/img3.jpg" alt="戦略研修アイコン">
+                    </div>
+                    <div class="service-content">
+                        <h3>住宅不動産会社向け生成AI研修</h3>
+                        <p>住宅不動産会社向けに、文章・画像・動画生成AIを組み合わせて集客アップや業務効率化を実現する生成AI研修を行います。</p>
+                        <p>対象：管理職・設計担当者・マーケティング担当者・営業担当者</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- パース作成事例セクション -->
+    <section class="perspective-showcase" id="perspective">
+        <div class="perspective-content">
+            <div class="perspective-intro">
+                <h2>パース作成事例</h2>
+                <p>AIによるパースの高精細化をご覧ください</p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <!-- スライド1 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>外構パース高精度化</h3>
+                            <img src="img/pers_01.png" alt="外構パース画像" class="perspective-image">
+                        </div>
+                    </div>
+
+                    <!-- スライド2 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>ホームステージング</h3>
+                            <img src="img/pers_02.png" alt="ホームステージング" class="perspective-image">
+                        </div>
+                    </div>
+
+                    <!-- スライド3 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>外構画像</h3>
+                            <img src="img/pers_03.png" alt="外構パース" class="perspective-image">
+                        </div>
+                    </div>
+
+                    <!-- スライド4 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>室内画像</h3>
+                            <img src="img/pers_04.png" alt="室内イメージ" class="perspective-image">
+                        </div>
+                    </div>
+
+                    <!-- スライド5 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>リフォームBefore＆After</h3>
+                            <img src="img/pers_05.png" alt="リフォームBA" class="perspective-image">
+                        </div>
+                    </div>
+
+                    <!-- スライド6 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h3>店舗改装</h3>
+                            <img src="img/pers_06.png" alt="店舗改装" class="perspective-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- スライダー操作ボタン -->
+                <button class="slider-arrows prev">‹</button>
+                <button class="slider-arrows next">›</button>
+            </div>
+
+            <div class="cost-comparison">
+                <div>高い品質のパースを<span class="price-highlight">約30分</span>で作れるように</div>
+                <div>コストはパース<span class="price-highlight">一軒</span>あたり平均<span class="price-highlight">60.5万円</span>→AIツール<span class="price-highlight">1万円前後</span>に</div>
+            </div>
+            <!-- ナビゲーションドット -->
+            <div class="slider-nav">
+                <span class="nav-dot active"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 助成金活用セクション -->
+    <section class="subsidy">
+        <div class="container">
+            <div class="section-title">
+                <h2>助成金活用のメリット</h2>
+                <p>研修費用の負担を軽減し、効果的な人材育成を実現</p>
+            </div>
+            <div class="subsidy-content">
+                <div class="subsidy-image">
+                    <img src="img/img4.png" alt="助成金活用イメージ">
+                </div>
+                <div class="subsidy-text">
+                    <h3>研修費用を最大75%軽減可能</h3>
+                    <p>各種助成金制度を活用することで、生成AI研修にかかる費用を大幅に軽減できます。人材開発支援助成金や地域の中小企業支援制度など、様々な制度を効果的に活用した研修計画を提案します。</p>
+                    <div class="subsidy-steps">
+                        <div class="subsidy-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <p>無料相談にて、貴社に最適な助成金制度をご案内</p>
+                            </div>
+                        </div>
+                        <div class="subsidy-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <p>助成金申請に必要な研修計画の策定をサポート</p>
+                            </div>
+                        </div>
+                        <div class="subsidy-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <p>申請書類の作成支援と申請手続きのアドバイス</p>
+                            </div>
+                        </div>
+                        <div class="subsidy-step">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <p>助成金受給後のフォローアップと効果測定</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声セクション -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>お客様の声</h2>
+                <p>研修を受講された企業様からいただいた声</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>生成AIの基礎から応用まで、実践的な内容でわかりやすく学ぶことができました。研修後すぐに社内で活用を始め、業務効率が大幅に向上しています。助成金申請のサポートもあり、費用面での負担も最小限に抑えられました。</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image"></div>
+                            <div class="author-info">
+                                <h4>株式会社T.I.</h4>
+                                <p>DX推進部長</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>営業部門向けの特化型研修を受講しました。顧客提案資料の作成や市場分析などに生成AIを活用する具体的なノウハウを習得でき、営業活動の質が向上しました。研修内容は実務に直結し、すぐに成果を出すことができました。</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image"></div>
+                            <div class="author-info">
+                                <h4>G.M.株式会社</h4>
+                                <p>営業企画課長</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>経営層向けのAI戦略立案研修は非常に有益でした。自社のビジネスモデルにどう生成AIを組み込むべきか、長期的な視点でロードマップを描けるようになりました。コスト削減だけでなく、新たな事業機会の創出にもつながっています。</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image"></div>
+                            <div class="author-info">
+                                <h4>N.S.株式会社</h4>
+                                <p>代表取締役</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 無料相談セクション -->
+    <div class="section-title">
+        <h2>無料ご相談</h2>
+        <br><br>
+        <p>研修内容や助成金についてzoomでお伝えします。お気軽にお申込みください。</p><br>
+        <div id="timerex_calendar" data-url="https://timerex.net/s/lovantvictoria01_a930/768314b7"></div>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LOVANT<span>VICTORIA</span></h3>
+                    <p>企業向け生成AI研修サービス</p>
+                </div>
+                <div class="footer-links">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#about">会社紹介</a></li>
+                        <li><a href="#services">サービス内容</a></li>
+                        <li><a href="#testimonials">お客様の声</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="company.html">会社概要</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>お問い合わせ</h4>
+                    <div class="contact-info">
+                        <i>✉</i>
+                        <p>info@lovantvictoria.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LOVANTVICTORIA All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+    <script type="text/javascript">
+        TimerexCalendar();
+    </script>
+
+    <script>
+        // スライダー機能
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('#perspective .slide');
+            const totalSlides = slides.length;
+            const sliderWrapper = document.querySelector('#perspective .slider-wrapper');
+            const navDots = document.querySelectorAll('#perspective .nav-dot');
+
+            console.log('スライド数:', totalSlides); // デバッグ用
+
+            function updateSlider() {
+                // 各スライドは100%/totalSlidesの幅を持つ
+                // currentSlideの位置に移動するには、currentSlide * (100/totalSlides)分だけ移動
+                const slideWidth = 100 / totalSlides; // 各スライドの幅の割合
+                const translateX = -currentSlide * slideWidth; // 移動量
+                console.log('スライド数:', totalSlides, '現在:', currentSlide, '移動量:', translateX + '%');
+                sliderWrapper.style.transform = `translateX(${translateX}%)`;
+                
+                // ナビゲーションドットの更新
+                navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                console.log('次のスライド:', currentSlide); // デバッグ用
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                console.log('前のスライド:', currentSlide); // デバッグ用
+                updateSlider();
+            }
+
+            // 初期化
+            updateSlider();
+
+            // ナビゲーションドットクリック
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+
+            // 矢印ボタン
+            const nextBtn = document.querySelector('#perspective .next');
+            const prevBtn = document.querySelector('#perspective .prev');
+            
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+            // タッチスワイプ対応
+            let startX = 0;
+            let isDragging = false;
+
+            const sliderContainer = document.querySelector('#perspective .slider-container');
+
+            if (sliderContainer) {
+                sliderContainer.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                });
+
+                sliderContainer.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                });
+
+                sliderContainer.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+
+                    if (Math.abs(diffX) > 50) {
+                        if (diffX > 0) {
+                            nextSlide();
+                        } else {
+                            prevSlide();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

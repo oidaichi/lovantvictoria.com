@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVANTVICTORIA - 会社概要</title>
+    <style>
+        /* リセットCSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .logo span {
+            color: #4285f4;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        /* ハンバーガーメニュー（モバイル用） */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        /* メインコンテンツ */
+        .main-content {
+            padding: 120px 20px 60px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .page-header {
+            background-color: #4285f4;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .content-wrapper {
+            padding: 40px;
+        }
+        
+        /* 会社概要テーブル */
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        
+        .company-table th {
+            width: 25%;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #4285f4;
+            font-weight: 600;
+            vertical-align: top;
+        }
+        
+        .company-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* 企業理念セクション */
+        .philosophy-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #4285f4;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .philosophy-content {
+            margin-bottom: 30px;
+        }
+        
+        /* 代表メッセージセクション */
+        .message-section {
+            margin-bottom: 40px;
+        }
+        
+        .message-content {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .message-content:before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 60px;
+            color: #e0e0e0;
+            font-family: serif;
+            z-index: 0;
+        }
+        
+        .message-text {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ceo-info {
+            text-align: right;
+            margin-top: 20px;
+        }
+        
+        .ceo-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo h3 span {
+            color: #4285f4;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-info {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4285f4;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+        
+        /* レスポンシブデザイン */
+        @media screen and (max-width: 768px) {
+            /* ヘッダー・ナビゲーション */
+            .header-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            nav.active ul {
+                display: flex;
+                animation: fadeIn 0.3s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            nav ul li {
+                margin: 8px 0;
+            }
+            
+            /* コンテンツエリア */
+            .main-content {
+                padding: 100px 15px 40px;
+            }
+            
+            .content-wrapper {
+                padding: 20px;
+            }
+            
+            .page-header {
+                padding: 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 22px;
+            }
+            
+            /* 会社概要テーブル */
+            .company-table th,
+            .company-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .company-table th {
+                padding-bottom: 5px;
+                border-bottom: none;
+            }
+            
+            .company-table td {
+                padding-top: 5px;
+                padding-left: 15px;
+            }
+            
+            /* セクションタイトル */
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            /* 代表メッセージ */
+            .message-content {
+                padding: 20px 15px;
+            }
+            
+            .message-content:before {
+                font-size: 40px;
+            }
+            
+            .ceo-name {
+                font-size: 16px;
+            }
+            
+            /* フッター */
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-logo, .footer-links, .footer-contact {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        /* 小さいスマホ用 */
+        @media screen and (max-width: 480px) {
+            .page-header h1 {
+                font-size: 20px;
+            }
+            
+            .company-table th {
+                font-size: 15px;
+            }
+            
+            .company-table td {
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .philosophy-content p,
+            .message-text p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        // モバイルメニューの切り替え用スクリプト
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // メニューの表示/非表示を切り替え
+                if (navMenu.querySelector('ul').style.display === 'flex' || 
+                    navMenu.querySelector('ul').style.display === '') {
+                    navMenu.querySelector('ul').style.display = 'none';
+                } else {
+                    navMenu.querySelector('ul').style.display = 'flex';
+                }
+            });
+            
+            // リンククリック時にメニューを閉じる
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    navMenu.querySelector('ul').style.display = 'none';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo">LOVANT<span>VICTORIA</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html#about">会社紹介</a></li>
+                    <li><a href="index.html#services">サービス内容</a></li>
+                    <li><a href="index.html#testimonials">お客様の声</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                    <li><a href="company.html">会社概要</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>会社概要</h1>
+            </div>
+            <div class="content-wrapper">
+                <!-- 会社概要テーブル -->
+                <table class="company-table">
+                    <tr>
+                        <th>会社名</th>
+                        <td>LOVANTVICTORIA</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>2023年4月</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>冨安 朱</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>
+                            <ul>
+                                <li>企業向け生成AI研修サービスの提供</li>
+                                <li>AIビジネス活用コンサルティング</li>
+                                <li>助成金活用支援サービス</li>
+                                <li>デジタルトランスフォーメーション(DX)推進支援</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>東京都目黒区八雲3-18-9</td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td>info@lovantvictoria.com</td>
+                    </tr>
+                </table>
+                
+                <!-- 企業理念セクション -->
+                <div class="philosophy-section">
+                    <h2 class="section-title">企業理念</h2>
+                    <div class="philosophy-content">
+                        <p>LOVANTVICTORIAは、「テクノロジーの力で、すべての企業に成長と革新をもたらす」という理念のもと、最先端の生成AI技術を企業に普及させることを使命としています。</p>
+                        <p>私たちは、AI技術が特定の企業だけでなく、あらゆる規模・業種の企業にとって力強いツールになると信じています。そして、その力を最大限に引き出すためには、正しい知識と実践的なスキルが不可欠です。</p>
+                        <p>LOVANTVICTORIAは、専門的な知識をわかりやすく伝え、実際のビジネスシーンで活用できる実践的なAI活用法を提供することで、企業のデジタル変革を支援します。</p>
+                    </div>
+                </div>
+                
+                <!-- ビジョンセクション -->
+                <div class="philosophy-section">
+                    <h2 class="section-title">ビジョン</h2>
+                    <div class="philosophy-content">
+                        <p>「全ての企業がAIの恩恵を享受できる社会を創る」</p>
+                        <p>LOVANTVICTORIAは、生成AIをはじめとする先端技術の普及が、企業の生産性向上だけでなく、新たな価値創造やイノベーションを促進すると考えています。</p>
+                        <p>2030年までに、日本の全ての企業が何らかの形でAI技術を活用している状態を目指し、特に中小企業におけるAI活用率を現在の10倍以上に高めることを目標としています。</p>
+                        <p>そのために、私たちは常に最先端の技術動向を把握し、それをビジネスに活かすための実践的な知識を提供し続けます。また、どの企業も手軽にAI研修を受けられるよう、助成金活用の支援も積極的に行います。</p>
+                    </div>
+                </div>
+                
+                <!-- 代表メッセージセクション -->
+                <div class="message-section">
+                    <h2 class="section-title">代表メッセージ</h2>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <p>生成AI技術の急速な発展は、ビジネスのあり方そのものを変革しつつあります。ChatGPTをはじめとする生成AIツールの登場により、これまで人間にしかできなかった創造的な作業の多くが、AIによって支援されるようになりました。</p>
+                            <p>しかし、この革命的な技術の恩恵を受けている企業はまだ限られています。多くの企業、特に中小企業においては、生成AIをどのように活用すれば良いのか、どのようにして自社のビジネスに取り入れるべきかという知識や経験が不足しているのが現状です。</p>
+                            <p>LOVANTVICTORIAは、この課題を解決するために設立されました。私たちは、生成AI技術を「特別なもの」ではなく、あらゆる企業が日常的に活用できる「当たり前のツール」にするための支援を行います。</p>
+                            <p>また、企業の負担を軽減するために、様々な助成金制度を活用した研修プログラムを提供しています。テクノロジーの恩恵をすべての企業に届けるために、私たちは今日も走り続けます。</p>
+                            <div class="ceo-info">
+                                <p class="ceo-name">代表取締役 冨安 朱</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LOVANT<span>VICTORIA</span></h3>
+                    <p>企業向け生成AI研修サービス</p>
+                </div>
+                <div class="footer-links">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="index.html#about">会社紹介</a></li>
+                        <li><a href="index.html#services">サービス内容</a></li>
+                        <li><a href="index.html#testimonials">お客様の声</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                        <li><a href="company.html">会社概要</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>お問い合わせ</h4>
+                    <div class="contact-info">
+                        <i>✉</i>
+                        <p>lovantvictoria01@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LOVANTVICTORIA All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
