@@ -1,0 +1,1 @@
+import"https://unpkg.com/@studio-freight/lenis@1.0.19/dist/lenis.min.js";const t=new Lenis({duration:1.2,easing:i=>Math.min(1,1.001-Math.pow(2,-10*i)),direction:"vertical",gestureDirection:"vertical",smooth:!0,mouseMultiplier:1,smoothTouch:!1,touchMultiplier:2,infinite:!1});function e(i){t.raf(i),requestAnimationFrame(e)}requestAnimationFrame(e);

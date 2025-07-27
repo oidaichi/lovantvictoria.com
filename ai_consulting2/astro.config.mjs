@@ -5,6 +5,7 @@ import icon from 'astro-icon';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
+  base: '/ai_consulting2',
   integrations: [react(), tailwind(), icon({
     include: {
       'mdi': ['*'],
