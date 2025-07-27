@@ -1,16 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.jsx';
-import Problem from '../components/Problem.jsx';
-import Solutions from '../components/Solutions.jsx';
-import Strengths from '../components/Strengths.jsx';
-import CTA from '../components/CTA.jsx';
+import Homepage from '../components/Homepage.astro';
+import { getCollection } from 'astro:content';
+
+const homepageEntries = await getCollection('homepage');
+const homepageContent = homepageEntries[0]; // Assuming single entry
 ---
 
-<Layout title="LOVANT VICTORIA - 生成AIで経営判断の迷いを確信に変える">
-  <Hero client:load />
-  <Problem client:load />
-  <Solutions client:load />
-  <Strengths client:load />
-  <CTA client:load />
+<Layout title={homepageContent.data.title}>
+  <Homepage content={homepageContent} />
 </Layout>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
