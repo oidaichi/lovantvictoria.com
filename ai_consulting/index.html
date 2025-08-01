@@ -7,1518 +7,459 @@
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
-
 	  gtag('config', 'G-ZMC2D3Z12V');
 	</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOVANTVICTORIA - AIコンサルティング</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        /* リセットCSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        /* ヘッダー */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .logo span {
-            color: #4285f4;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #4285f4;
-            text-decoration: none;
-        }
-        
-        /* ハンバーガーメニュー（モバイル用） */
-        .menu-toggle {
-            display: none; /* デフォルトは非表示 */
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: #333;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-
-        /* モバイル時のナビゲーション */
-        @media (max-width: 1024px) {
-            .menu-toggle {
-                display: flex; /* モバイルで表示 */
-            }
-
-            nav {
-                display: none; /* モバイルでデフォルト非表示 */
-                position: absolute;
-                top: 60px; /* ヘッダーの高さに合わせて調整 */
-                left: 0;
-                width: 100%;
-                background-color: #ffffff;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                padding: 20px 0;
-                text-align: center;
-            }
-
-            nav.active {
-                display: block; /* activeクラスが付いたら表示 */
-            }
-
-            nav ul {
-                flex-direction: column; /* 縦並び */
-            }
-
-            nav ul li {
-                margin: 10px 0; /* 縦方向のマージン */
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#10b981'
+                    }
+                }
             }
         }
-        
-        /* 生成AIご説明動画セクション */
-        .ai-training-video-section {
-            margin: 40px 0;
-            font-family: 'Yu Gothic', 'Hiragino Sans', Arial, sans-serif;
-        }
-        
-        .ai-video-container {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        
-        .ai-video-container h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        
-        .ai-video-container video {
-            width: 100%;
-            max-width: 720px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .ai-controls-note {
-            margin-top: 10px;
-            color: #888;
-            font-size: 12px;
-        }
-        
-        /* スマホ向けレスポンシブ対応 */
-        @media (max-width: 768px) {
-            .ai-training-video-section {
-                margin: 20px 0;
-            }
-            
-            .ai-video-container {
-                padding: 20px;
-                border-radius: 8px;
-            }
-            
-            .ai-video-container video {
-                width: 100%;
-                max-width: none;
-                border-radius: 6px;
-            }
-            
-            .ai-video-container h2 {
-                font-size: 20px;
-            }
-        }
-        
-        /* ヒーローセクション */
-        .hero {
-            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-            color: white;
-            text-align: center;
-            padding: 150px 20px 100px;
-        }
-        
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #4285f4;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin: 10px; /* Added for spacing between buttons */
-        }
-        
-        .btn:hover {
-            background-color: #f2f2f2;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-decoration: none;
-        }
-        
-        /* セクション共通 */
-        section {
-            padding: 80px 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: #4285f4;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-title p {
-            color: #666;
-            font-size: 16px;
-        }
-        
-        /* 会社紹介セクション */
-        .about {
-            background-color: #ffffff;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-        
-        .about-text h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* サービス内容セクション */
-        .services {
-            background-color: #f9f9f9;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .service-icon {
-            height: auto;
-            background-color: #4285f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .service-icon img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            aspect-ratio: 1408/768;
-            display: block;
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        /* パーススライダーセクション */
-        .perspective-showcase {
-            background-color: #ffffff;
-            padding: 80px 20px;
-        }
-
-        .perspective-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .perspective-intro {
-            margin-bottom: 50px;
-        }
-
-        .perspective-intro h2 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .perspective-intro h2:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: #4285f4;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .perspective-intro p {
-            color: #666;
-            font-size: 16px;
-        }
-
-        .cost-comparison {
-            /*background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);*/
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .cost-comparison .price-highlight {
-            font-size: 48px;
-            color: #4083F4;
-        }
-
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.3s ease;
-            width: 600%; /* 6スライド分 */
-        }
-
-        .slide {
-            flex: 0 0 16.666667%; /* 100% / 6 = 16.666667% */
-            width: 16.666667%;
-            background: white;
-            padding: 30px;
-            box-sizing: border-box;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;  /* 水平方向の中央配置 */
-        }
-
-        .slide-content {
-              text-align: center;
-		    width: 100%;
-		    display: flex;
-		    flex-direction: column;
-		    align-items: center;
-		            
-        }
-
-        .slide-content h3 {
-            font-size: 20px;
-            /*margin-bottom: 15px;*/
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #######;
-            color: black;
-        }
-
-        .perspective-image {
-            max-width: 90%;  /* コンテナ幅の90%に制限 */
-    margin: 0 auto;  /* 中央配置 */
-        }
-
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 10px;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .nav-dot.active {
-            background-color: #4285f4;
-        }
-
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(66, 133, 244, 0.8);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            z-index: 10;
-        }
-
-        .slider-arrows:hover {
-            background-color: rgba(66, 133, 244, 1);
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-        /* スマホ向けレスポンシブ対応 */
-        @media (max-width: 768px) {
-            .perspective-showcase {
-                padding: 50px 15px;
-            }
-
-            .perspective-intro h2 {
-                font-size: 24px;
-            }
-
-            .cost-comparison {
-                font-size: 16px;
-                padding: 20px;
-            }
-
-            .cost-comparison .price-highlight {
-                font-size: 20px;
-            }
-
-            .slide {
-                padding: 20px 15px;
-            }
-
-            .slide-content h3 {
-                font-size: 18px;
-                padding: 8px;
-                margin-bottom: 10px;
-            }
-
-            .perspective-image {
-                height: 200px;
-            }
-
-            .slider-arrows {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-        }
-
-        /* より小さいスマホ用 */
-        @media (max-width: 480px) {
-            .perspective-intro h2 {
-                font-size: 20px;
-            }
-
-            .cost-comparison {
-                font-size: 14px;
-                padding: 15px;
-            }
-
-            .cost-comparison .price-highlight {
-                font-size: 18px;
-            }
-
-            .slide {
-                padding: 15px 10px;
-            }
-
-            .slide-content h3 {
-                font-size: 16px;
-                padding: 6px;
-                margin-bottom: 8px;
-            }
-
-            .perspective-image {
-                height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            }
-
-            .slider-arrows {
-                width: 30px;
-                height: 30px;
-                font-size: 14px;
-            }
-        }
-
-        /* タブレット用 */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .perspective-showcase {
-                padding: 60px 20px;
-            }
-
-            .perspective-intro h2 {
-                font-size: 28px;
-            }
-
-            .cost-comparison {
-                font-size: 17px;
-                padding: 25px;
-            }
-
-            .slide {
-                padding: 25px;
-            }
-
-            .perspective-image {
-                height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            }
-        }
-        
-        /* 助成金活用セクション */
-        .subsidy {
-            background-color: #ffffff;
-        }
-        
-        .subsidy-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .subsidy-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .subsidy-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            aspect-ratio: 1576/742;
-            object-fit: contain;
-        }
-        
-        .subsidy-text {
-            flex: 1;
-            min-width: 300px;
-            padding-left: 30px;
-        }
-        
-        .subsidy-text h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .subsidy-steps {
-            margin-top: 20px;
-        }
-        
-        .subsidy-step {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background-color: #4285f4;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-text {
-            flex: 1;
-        }
-        
-        /* お客様の声セクション */
-        .testimonials {
-            background-color: #f9f9f9;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 60px;
-            color: #f2f2f2;
-            font-family: serif;
-            z-index: 0;
-        }
-        
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            background-color: #e0e0e0;
-        }
-        
-        .author-info h4 {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-        }
-        
-        .testimonial-author p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .team-member {
-            margin-bottom: 30px;
-        }
-
-        .team-member p {
-            line-height: 1.75;
-            margin-bottom: 1em;
-        }
-        
-        /* フッター */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-logo h3 span {
-            color: #4285f4;
-        }
-        
-        .footer-links {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links h4 {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 8px;
-        }
-        
-        .footer-links ul li a {
-            color: #ddd;
-            transition: color 0.3s;
-        }
-        
-        .footer-links ul li a:hover {
-            color: #4285f4;
-            text-decoration: none;
-        }
-        
-        .footer-contact {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-contact h4 {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .contact-info {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: #4285f4;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 14px;
-        }
-        
-        .responsive-image {
-            max-width: 100%;
-            height: auto;
-            margin: 10px;
-        }
-        
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* New styles for tables */
-        .table-responsive {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            min-width: 700px; /* Ensure table is wide enough to scroll on small screens */
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            vertical-align: top; /* Align content to top */
-        }
-
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-
-        /* New styles for Q&A */
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        .faq-question {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #4285f4;
-        }
-
-        .faq-answer {
-            margin-left: 20px;
-        }
-
-        /* Process image styles */
-        .process-image-container {
-            text-align: center;
-            margin: 40px auto;
-        }
-
-        .process-image-pc {
-            width: 80%;
-            height: auto;
-            display: block; /* PCでは表示 */
-            margin: 0 auto;
-        }
-
-        .process-image-sp {
-            display: none; /* PCでは非表示 */
-        }
-
-        @media (max-width: 768px) {
-            .process-image-pc {
-                display: none; /* スマホでは非表示 */
-            }
-
-            .process-image-sp {
-                width: 100%;
-                height: auto;
-                display: block; /* スマホでは表示 */
-            }
-        }
-
-        /* Accordion styles */
-        .accordion-group {
-            margin-bottom: 40px;
-        }
-        .accordion-group h3 {
-            font-size: 24px;
-            margin-bottom: 25px;
-            color: #2c3e50;
-            border-left: 5px solid #4285f4;
-            padding-left: 15px;
-        }
-        .accordion-item {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: box-shadow 0.3s;
-            overflow: hidden;
-        }
-        .accordion-item:hover {
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-        }
-
-        .accordion-title {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            cursor: pointer;
-            background-color: #ffffff;
-            transition: background-color 0.3s;
-        }
-        .accordion-title:hover {
-            background-color: #fafafa;
-        }
-
-        .accordion-title .challenge-icon {
-            font-size: 22px;
-            margin-right: 20px;
-            color: #4285f4;
-            width: 30px;
-            text-align: center;
-        }
-
-        .accordion-title h4 {
-            flex-grow: 1;
-            font-size: 18px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .accordion-icon {
-            font-size: 20px;
-            color: #777;
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
-            padding: 0 20px;
-            background-color: #fdfdfd;
-        }
-        
-        .accordion-content-inner {
-            padding: 30px 25px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .accordion-content-inner > p {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .accordion-content-inner h5 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #34495e;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .accordion-item.active .accordion-icon {
-            transform: rotate(135deg);
-            color: #4285f4;
-        }
-
-        .solution-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .solution-list > li {
-            margin-bottom: 20px;
-        }
-
-        .solution-list strong {
-            display: inline-block;
-            margin-bottom: 8px;
-            font-size: 16px;
-            color: #34495e;
-            font-weight: 600;
-        }
-
-        .solution-list ul {
-            list-style: none;
-            padding-left: 25px;
-            margin-top: 8px;
-        }
-        .solution-list ul li {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 8px;
-            color: #555;
-            line-height: 1.5;
-        }
-        .solution-list ul li::before {
-            content: '\f0da';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #4285f4;
-        }
-
-        .effect-result {
-            font-size: 16px;
-            color: #27ae60;
-            font-weight: 500;
-            margin-top: 30px;
-            text-align: left;
-            padding: 15px 20px;
-            background-color: #e9f7ef;
-            border-left: 5px solid #27ae60;
-            border-radius: 0 8px 8px 0;
-            display: flex;
-            align-items: center;
-        }
-        .effect-result strong {
-            font-weight: 700;
-            margin-right: 10px;
-        }
-        .effect-result::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 18px;
-            margin-right: 15px;
-            color: #27ae60;
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="font-sans leading-relaxed text-gray-800 bg-white">
     <!-- ヘッダー -->
-    <header>
-        <div class="header-container">
-            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">LOVANT<span>VICTORIA</span></a></div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <a href="../index.html" class="text-gray-800 hover:text-primary transition-colors">
+                        LOVANT<span class="text-primary">VICTORIA</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-gray-700 hover:text-primary transition-colors font-medium">トップ</a>
+                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors font-medium">強み</a>
+                    <a href="#team" class="text-gray-700 hover:text-primary transition-colors font-medium">メンバー紹介</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">お問い合わせ</a>
+                </nav>
+                <!-- モバイルメニューボタン -->
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="#hero">トップ</a></li>
-                    <li><a href="#differentiation">強み</a></li>
-                    <li><a href="#team">メンバー紹介</a></li>
-                </ul>
-            </nav>
+            <!-- モバイルメニュー -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="pt-4 pb-3 space-y-1">
+                    <a href="#hero" class="block px-3 py-2 text-gray-700 hover:text-primary">トップ</a>
+                    <a href="#features" class="block px-3 py-2 text-gray-700 hover:text-primary">強み</a>
+                    <a href="#team" class="block px-3 py-2 text-gray-700 hover:text-primary">メンバー紹介</a>
+                    <a href="#contact" class="block px-3 py-2 bg-primary text-white rounded-lg text-center">お問い合わせ</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- 1. ヒーローセクション -->
-    <section class="hero" id="hero">
-        <h1>生成AIで、経営判断の“迷い”を“確信”に変える</h1>
-        <p>導入3ヶ月で営業利益＋3億円の実績<br>・住宅・不動産100社超で即戦力化を実現</p>
-        <a href="#contact" class="btn">無料経営診断を依頼する</a>
-        <a href="#" class="btn">実績レポートをダウンロード</a>
+    <!-- ヒーローセクション -->
+    <section id="hero" class="bg-gradient-to-br from-primary to-secondary text-white pt-24 pb-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                生成AIで、経営判断の<br class="md:hidden">"迷い"を"確信"に変える
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                導入3ヶ月で営業利益＋3億円の実績<br>
+                住宅・不動産100社超で即戦力化を実現
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                    無料経営診断を依頼する
+                </a>
+                <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-primary transition-all">
+                    実績レポートをダウンロード
+                </a>
+            </div>
+        </div>
     </section>
-    
-    <!-- Proposal Examples Section -->
-    <section id="proposal-examples" class="bg-white py-20">
-        <div class="container" style="max-width: 70%; margin: 0 auto;">
+
+    <!-- 提案実績セクション -->
+    <section id="proposal-examples" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">提案実績</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">業務実績</h2>
+                <p class="text-gray-600 text-lg">住宅・不動産・金融・IT・医療介護・エネルギー業界等での豊富な実績があります</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div class="relative w-full aspect-[4/3]">
-                    <img 
-                        src="img/franchise_example.png" 
-                        alt="Franchise Example"
-                        class="w-full h-full object-cover rounded-lg shadow-md"
-                        style="width: 100%; height: auto;"
-                    >
+            <div class="space-y-6">
+                <img src="img/franchise_example.png" alt="フランチャイズ事業の実績" class="w-full md:w-[70%] mx-auto rounded-lg shadow-md">
+                <img src="img/consulting_example.png" alt="コンサルティング業の実績" class="w-full md:w-[70%] mx-auto rounded-lg shadow-md">
+                <img src="img/kimono_example.png" alt="着物・伝統産業の実績" class="w-full md:w-[70%] mx-auto rounded-lg shadow-md">
+                <img src="img/medical_care_example.png" alt="医療・ヘルスケアの実績" class="w-full md:w-[70%] mx-auto rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- 強みセクション -->
+    <section id="features" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    LOVANTVICTORIAが、業績に伴走します
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">完全伴走型コンサルティング</h3>
+                    <p class="text-gray-600">KPI設計から効果測定、次期ロードマップまで半年以上フォロー</p>
                 </div>
-                <div class="relative w-full aspect-[4/3]">
-                    <img 
-                        src="img/consulting_example.png" 
-                        alt="Consulting Example"
-                        class="w-full h-full object-cover rounded-lg shadow-md"
-                        style="width: 100%; height: auto;"
-                    >
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">BI×Gemini自動分析</h3>
+                    <p class="text-gray-600">バラバラなデータを活用し、経営指標をすぐに"見える化"。経営スピードを高速化</p>
                 </div>
-                <div class="relative w-full aspect-[4/3]">
-                    <img 
-                        src="img/kimono_example.png" 
-                        alt="Kimono Example"
-                        class="w-full h-full object-cover rounded-lg shadow-md"
-                        style="width: 100%; height: auto;"
-                    >
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">業務棚卸→具体AI業務プロセス改善研修</h3>
+                    <p class="text-gray-600">部門ごとの業務フロー可視化とROIシミュレーションで投資判断をサポート</p>
                 </div>
-                <div class="relative w-full aspect-[4/3]">
-                    <img 
-                        src="img/medical_care_example.png" 
-                        alt="Medical Care Example"
-                        class="w-full h-full object-cover rounded-lg shadow-md"
-                        style="width: 100%; height: auto;"
-                    >
+            </div>
+
+            <!-- 比較表 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 bg-gray-50 border-b">
+                    <h3 class="text-2xl font-bold text-center">弊社の強み</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px]">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-bold">項目</th>
+                                <th class="px-6 py-4 text-left font-bold">A社</th>
+                                <th class="px-6 py-4 text-left font-bold">B社</th>
+                                <th class="px-6 py-4 text-left font-bold bg-primary text-white">LOVANT VICTORIA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">コンサルティング範囲</td>
+                                <td class="px-6 py-4 text-sm">部門横断のITオペレーション、カスタマーサービスなど幅広い領域をカバー</td>
+                                <td class="px-6 py-4 text-sm">生成AI専門タスクフォースによる参入判断～ガバナンス構築まで、監査・税務・法務と連携</td>
+                                <td class="px-6 py-4 text-sm bg-blue-50 font-semibold text-primary">AI導入～社内定着・人材育成までワンストップで伴走</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">技術プラットフォーム</td>
+                                <td class="px-6 py-4 text-sm">独自AIプラットフォーム「watsonx Granite」を中心に自社＋他社モデルを併用</td>
+                                <td class="px-6 py-4 text-sm">AI利活用のリスク管理・ガバナンス強化に注力、研究機関との共同研究実績あり</td>
+                                <td class="px-6 py-4 text-sm bg-blue-50 font-semibold text-primary">BI×ChatGPT連携による即時ダッシュボード＆自動レポート構築</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">提案アプローチ</td>
+                                <td class="px-6 py-4 text-sm">大規模プロジェクト向けにテンプレート化＆自動化ツールを提供</td>
+                                <td class="px-6 py-4 text-sm">法務・税務・M&Aなど専門領域と組み合わせた横断的支援</td>
+                                <td class="px-6 py-4 text-sm bg-blue-50 font-semibold text-primary">現場主義ワークショップ＋ROIシミュレーションで経営判断を加速</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">業界特化</td>
+                                <td class="px-6 py-4 text-sm">金融・製造・小売などグローバル大手企業中心</td>
+                                <td class="px-6 py-4 text-sm">グローバルCEO意識調査などで得た知見を基に、業界横断的にガバナンス構築</td>
+                                <td class="px-6 py-4 text-sm bg-blue-50 font-semibold text-primary">住宅・不動産100社超、金融・エネルギー領域にも豊富な導入実績</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">サポート期間</td>
+                                <td class="px-6 py-4 text-sm">プロジェクト納品後はオプション契約が必要</td>
+                                <td class="px-6 py-4 text-sm">プロジェクト期間中のフォロー＋リスクレビューは標準提供</td>
+                                <td class="px-6 py-4 text-sm bg-blue-50 font-semibold text-primary">KPI設計～6ヶ月以上の定期レビュー＆次期ロードマップ策定まで</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
 
-    <style>
-        @media (max-width: 768px) {
-            #proposal-examples .container {
-                max-width: 100% !important;
-                padding: 0 15px;
-            }
-        }
-    </style>
-    <!-- 3. 解決策提示 -->
-    <section id="solution" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>LOVANT VICTORIAが、CEOとともに“成果”をコミットする理由</h2>
+    <!-- サービス内容 --><!--
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">サービス内容</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>完全伴走型コンサルティング</h3>
-                        <p>KPI設計から効果測定、次期ロードマップまで半年以上フォロー</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary text-2xl font-bold mb-4">A. フェーズ①</div>
+                    <h3 class="text-lg font-bold mb-3">価値提案設計</h3>
+                    <p class="text-gray-600 text-sm">ヒアリング→部門選定<br>「どの部門で年間営業利益＋3億円を実現するか」をシミュレーション</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary text-2xl font-bold mb-4">B. フェーズ②</div>
+                    <h3 class="text-lg font-bold mb-3">業務棚卸・優先度分析</h3>
+                    <p class="text-gray-600 text-sm">ワークショップ（2回×半日）：ボトルネックと高ROI業務を可視化</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary text-2xl font-bold mb-4">C. フェーズ③</div>
+                    <h3 class="text-lg font-bold mb-3">プロトタイプ開発・導入支援</h3>
+                    <p class="text-gray-600 text-sm">AIプロンプト集100種超提供<br>ダッシュボード構築：導入4週間で運用開始</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary text-2xl font-bold mb-4">D. フェーズ④</div>
+                    <h3 class="text-lg font-bold mb-3">定着・内製化支援</h3>
+                    <p class="text-gray-600 text-sm">月次レビュー会＆改善提案（半年間）<br>社内講師養成トレーニング（10名／回）</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary text-2xl font-bold mb-4">E. フェーズ⑤</div>
+                    <h3 class="text-lg font-bold mb-3">業績向上支援</h3>
+                    <p class="text-gray-600 text-sm">経営指標最適化コンサル<br>次期AI戦略ロードマップ作成</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- 導入プロセス -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">導入プロセス</h2>
+            </div>
+            <div class="text-center">
+                <img src="img/AIコンサルティングの全体像02.png" alt="AIコンサルティングの全体像" class="hidden md:block mx-auto rounded-lg shadow-lg max-w-full h-auto">
+                <img src="img/AIコンサルティングの全体像02_スマホ.png" alt="AIコンサルティングの全体像（スマホ用）" class="block md:hidden mx-auto rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- 導入事例 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">導入事例</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary font-bold text-lg mb-2">中規模不動産設計企業様</div>
+                    <div class="text-gray-600 text-sm mb-4">
+                        <strong>課題：</strong>同時進行している200案件の情報整理に年間2,760時間を費やしている。随時業務フローが変わるためシステム導⼊も難しい。
+                    </div>
+                    <div class="text-gray-800 text-sm font-semibold">
+                        <strong>成果：</strong>に⽣成AIを使った⾼速システム開発の研修を実施。年間1400時間の削減と、非エンジニアが1000万円級のシステムを作成できるように。
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>BI×ChatGPT自動分析</h3>
-                        <p>生データから即時に経営指標を可視化、次の一手を“見える化”</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary font-bold text-lg mb-2">医療・介護グループ企業</div>
+                    <div class="text-gray-600 text-sm mb-4">
+                        <strong>課題：</strong>すでに2億円かけて社員に生成AI教育を導入。しかし幅広い業界業種向けの研修だったため現場でAIを活用した業務フローが定着していない。
+                    </div>
+                    <div class="text-gray-800 text-sm font-semibold">
+                        <strong>成果：</strong>歯科医院・サービス付き高齢者住宅向けのAI業務コンサルを実施。現場経験のある弊社AIコンサルが現場の悩みに寄り添って提案することで定着化、利用率が40%向上。
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>業務棚卸→具体提案ワークショップ</h3>
-                        <p>部門ごとの業務フロー可視化とROIシミュレーションで投資判断をサポート</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-primary font-bold text-lg mb-2">大手不動産仲介企業</div>
+                    <div class="text-gray-600 text-sm mb-4">
+                        <strong>課題：</strong>顧客の物件オーナー企業と5回以上の会議後に提案資料が完成し、提案までの期間が多い。
+                    </div>
+                    <div class="text-gray-800 text-sm font-semibold">
+                        <strong>成果：</strong>該当物件とグループ企業のアセットを網羅的に調査、もっとも収益性の高い活用法を提案するAIエージェントを作成。商談回数と期間が圧倒的に短縮。
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. 弊社の強み -->
-    <section id="differentiation">
-        <div class="container">
-            <div class="section-title">
-                <h2>弊社の強み</h2>
+    <!-- メンバー紹介 -->
+    <section id="team" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">メンバー紹介</h2>
             </div>
-            <div class="table-responsive">
-                <table>
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>A社</th>
-                        <th>B社</th>
-                        <th>LOVANT VICTORIA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>コンサルティング範囲</td>
-                        <td>部門横断のITオペレーション、カスタマーサービスなど幅広い領域をカバー</td>
-                        <td>生成AI専門タスクフォースによる参入判断～ガバナンス構築まで、監査・税務・法務と連携</td>
-                        <td>AI導入～社内定着・人材育成までワンストップで伴走</td>
-                    </tr>
-                    <tr>
-                        <td>技術プラットフォーム</td>
-                        <td>独自AIプラットフォーム「watsonx Granite」を中心に自社＋他社モデルを併用</td>
-                        <td>AI利活用のリスク管理・ガバナンス強化に注力、研究機関との共同研究実績あり</td>
-                        <td>BI×ChatGPT連携による即時ダッシュボード＆自動レポート構築</td>
-                    </tr>
-                    <tr>
-                        <td>提案アプローチ</td>
-                        <td>大規模プロジェクト向けにテンプレート化＆自動化ツールを提供</td>
-                        <td>法務・税務・M&Aなど専門領域と組み合わせた横断的支援</td>
-                        <td>現場主義ワークショップ＋ROIシミュレーションで経営判断を加速</td>
-                    </tr>
-                    <tr>
-                        <td>業界特化</td>
-                        <td>金融・製造・小売などグローバル大手企業中心</td>
-                        <td>グローバルCEO意識調査などで得た知見を基に、業界横断的にガバナンス構築</td>
-                        <td>住宅・不動産100社超、金融・エネルギー領域にも豊富な導入実績</td>
-                    </tr>
-                    <tr>
-                        <td>サポート期間</td>
-                        <td>プロジェクト納品後はオプション契約が必要</td>
-                        <td>プロジェクト期間中のフォロー＋リスクレビューは標準提供</td>
-                        <td>KPI設計～6ヶ月以上の定期レビュー＆次期ロードマップ策定まで</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+            
+            <div class="grid md:grid-cols-3 gap-8">            
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">取締役副社長 天野陽馨</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p>船井総合研究所において、生成AI分野で最も精通したコンサルタントとして活躍。新卒入社後、住宅・不動産業界の業績アップコンサルティングで実績を積み、現在は生成AI活用のエキスパートへと転身。</p>
+                        <p>ChatGPT導入研修を60社以上、画像生成AI研修を30社以上に提供。文章、画像、動画など、あらゆる生成AIツールを駆使し、クライアント企業の業務効率化と集客増加に直接コミット。</p>
+                    </div>
+                </div>
 
-    <!-- 5. サービス内容 -->
-    <section id="services-detail" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>サービス内容</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>A. フェーズ①：価値提案設計</h3>
-                        <p>ヒアリング→部門選定<br>「どの部門で年間営業利益＋3億円を実現するか」をシミュレーション</p>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">ディレクター 渡邉亮太</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p>2009年CBRE Valuation and Advisory service部入社。国内外投資家向けの不動産に関するコンサルティング・バリュエーション業務に従事</p>
+                        <p>2015年ゴールドマン・サックス証券入社。自己勘定投資の不動産・再生可能エネルギーの投資・アセットマネジメント業務に従事、2022年には約1200億円の太陽光発電所のファンドの設立に従事、国内太陽光に関しては本邦随一の投資実績を誇る</p>
+                        <p>2023年Sustech入社。エネルギーカンパニーCEOとして国内最大級1500億円のファンドの運営、電力運用事業の責任者を担う</p>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>B. フェーズ②：業務棚卸・優先度分析</h3>
-                        <p>ワークショップ（2回×半日）：ボトルネックと高ROI業務を可視化</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>C. フェーズ③：プロトタイプ開発・導入支援</h3>
-                        <p>AIプロンプト集100種超提供<br>ダッシュボード構築：導入4週間で運用開始</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>D. フェーズ④：定着・内製化支援</h3>
-                        <p>月次レビュー会＆改善提案（半年間）<br>社内講師養成トレーニング（10名／回）</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>E. フェーズ⑤：業績向上支援</h3>
-                        <p>経営指標最適化コンサル<br>次期AI戦略ロードマップ作成</p>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">最高技術責任者 及川大智</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p>2015年画像認識の国際学会で最優秀論文賞を受賞。国立大学大学院で人工知能を専攻し、首席卒業</p>
+                        <p>2018年大手コンサルティングファームクニエ入社。NTTドコモでのAI渋滞予測システム開発やNTTデータでのカスタマーサクセス改革を主導</p>
+                        <p>2024年総務省主催ビジネスコンテストで最優秀賞受賞、PayPayカードにて人工知能コンサル・開発により営業利益を3億円上昇</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. 導入プロセス -->
-    <section id="process">
-        <div class="container">
-            <div class="section-title">
-                <h2>導入プロセス</h2>
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">よくあるご質問</h2>
             </div>
-            <div class="process-image-container">
-                <img src="img/AIコンサルティングの全体像02.png" alt="AIコンサルティングの全体像" class="process-image-pc">
-                <img src="img/AIコンサルティングの全体像02_スマホ.png" alt="AIコンサルティングの全体像（スマホ用）" class="process-image-sp">
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q1. 初期投資額はいくらですか？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. 100万円～。規模・フェーズに応じて柔軟に設計可能です。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q2. 社内人材がいなくても大丈夫？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. 研修＋OJTで3ヶ月後に自走可能。AIリーダー選任による浸透支援も実施</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q3. どれくらいで成果が出ますか？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. 初期レポート提出後、最短3ヶ月でKPI改善を実感できます。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q4. どのような業種に対応していますか？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. 製造業、金融、不動産、小売、サービス業など、幅広い業種に対応しております。各業界特有の課題に合わせた最適なAIソリューションをご提案します。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q5. 導入後のサポートはありますか？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. はい、ございます。弊社ではAIの導入だけでなく、その後の定着・活用までをワンストップでサポートします。定期的なレビュー会や改善提案を通じて、お客様のビジネス成果を最大化します。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary focus:outline-none focus:text-primary" onclick="toggleFaq(this)">
+                        Q6. 相談だけでも大丈夫ですか？
+                        <i class="fas fa-chevron-down float-right mt-1 transform transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">A. もちろんです。まずは無料の経営診断にて、お客様の現状の課題やAI活用の可能性についてヒアリングさせていただきます。お気軽にお問い合わせください。</p>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
 
-    <!-- 7. 導入事例 -->
-    <section id="cases">
-        <div class="container">
-            <div class="section-title">
-                <h2>導入事例</h2>
-            </div>
-            <div class="table-responsive">
-                <table>
-                <thead>
-                    <tr>
-                        <th>企業名</th>
-                        <th>業種</th>
-                        <th>課題</th>
-                        <th>成果</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>株式会社〇〇</td>
-                        <td>不動産</td>
-                        <td>顧客データ分析の属人化と時間的コスト</td>
-                        <td>AIによる顧客セグメンテーションとパーソナライズ提案で成約率10%向上、分析工数50%削減。</td>
-                    </tr>
-                    <tr>
-                        <td>△△製造株式会社</td>
-                        <td>製造業</td>
-                        <td>生産ラインの異常検知の遅延と誤検知</td>
-                        <td>画像認識AI導入により異常検知精度95%達成、ダウンタイム20%削減。</td>
-                    </tr>
-                    <tr>
-                        <td>□□証券</td>
-                        <td>金融</td>
-                        <td>顧客分析レポートの遅延</td>
-                        <td>レポート納期半減、成約率＋8％</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. メンバー紹介 -->
-    <section id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>メンバー紹介</h2>
-            </div>
-            <div class="team-members">
-                <div class="team-member">
-                    <h3>代表取締役社長 渡邉亮太</h3>
-                    <p>2009年CBRE Valuation and Advisory service部入社国内外投資家向けの不動産に関するコンサルティング・バリュエーション業務に従事</p>
-                    <p>2015年ゴールドマン・サックス証券入社自己勘定投資の不動産・再生可能エネルギーの投資・アセットマネジメント業務に従事、2022年には約1200億円の太陽光発電所のファンドの設立に従事、国内太陽光に関しては本邦随一の投資実績を誇る</p>
-                    <p>2023年Sustech入社エネルギーカンパニーCEOとして国内最大級1500億円のファンドの運営、電力運用事業の責任者を担う</p>
-                </div>
-                <div class="team-member">
-                    <h3>代表取締役社長 冨安朱</h3>
-                    <p>複数の企業経営を通じて事業創造と組織成⾧を牽引してきた実績豊富な経営者。特に、スタートアップから成⾧フェーズにある企業の事業拡大戦略、およびそれに伴う組織構築と人材育成において卓越した手腕を発揮。</p>
-                    <p>教育業界、美容、エンターテイメント、フォトスタジオ事業など、多岐にわたる事業領域での成功経験を持ち急成⾧する組織における採用、育成、文化醸成を通じてチームのパフォーマンスを最大化し、企業の持続的な成⾧を実現してきました。新たな事業機会の創出、既存事業の変革を力強く推進する、強力なリーダーシップと実行力を兼ね備える。</p>
-                </div>
-                <div class="team-member">
-                    <h3>取締役副社長 天野陽馨</h3>
-                    <p>船井総合研究所において、生成AI分野で最も精通したコンサルタントとして活躍。新卒入社後、住宅・不動産業界の業績アップコンサルティングで実績を積み、現在は生成AI活用のエキスパートへと転身。ChatGPT導入研修を60社以上、画像生成AI研修を30社以上に提供。文章、画像、動画など、あらゆる生成AIツールを駆使し、クライアント企業の業務効率化と集客増加に直接コミット。最新のAI技術を戦略的に活用し、ビジネスの成⾧と変革を支援する気鋭のコンサルタント。豊富な経験と先進的知識で、企業のAI導入と活用を成功へと導く。</p>
-                </div>
-                <div class="team-member">
-                    <h3>最高技術責任者 及川大智</h3>
-                    <p>2015年画像認識の国際学会で最優秀論文賞を受賞。国立大学大学院で人工知能を専攻し、首席卒業</p>
-                    <p>2018年大手コンサルティングファームクニエ入社NTTドコモでのAI渋滞予測システム開発やNTTデータでのカスタマーサクセス改革を主導</p>
-                    <p>2020年人工知能エンジニア/データサイエンティストとして独立ソニーマーケティング等のデータドリブン経営を支援、マイナビ出版と人工知能の技術書籍を出版、Amazonカテゴリ売上No.1を達成</p>
-                    <p>2024年総務省主催ビジネスコンテストで最優秀賞受賞、PayPayカードにて人工知能コンサル・開発により営業利益を3億円上昇</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. よくあるご質問 -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>よくあるご質問</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <p class="faq-question">Q1. 初期投資額はいくらですか？</p>
-                    <p class="faq-answer">A. 100万円～。規模・フェーズに応じて柔軟に設計可能です。</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q2. 社内人材がいなくても大丈夫？</p>
-                    <p class="faq-answer">A. 研修＋OJTで3ヶ月後に自走可能。AIリーダー選任による浸透支援も実施</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q3. どれくらいで成果が出ますか？</p>
-                    <p class="faq-answer">A. 初期レポート提出後、最短3ヶ月でKPI改善を実感できます。</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q4. どのような業種に対応していますか？</p>
-                    <p class="faq-answer">A. 製造業、金融、不動産、小売、サービス業など、幅広い業種に対応しております。各業界特有の課題に合わせた最適なAIソリューションをご提案します。</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q5. 導入後のサポートはありますか？</p>
-                    <p class="faq-answer">A. はい、ございます。弊社ではAIの導入だけでなく、その後の定着・活用までをワンストップでサポートします。定期的なレビュー会や改善提案を通じて、お客様のビジネス成果を最大化します。</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q6. 相談だけでも可能ですか？</p>
-                    <p class="faq-answer">A. もちろんです。まずは無料の経営診断にて、お客様の現状の課題やAI活用の可能性についてヒアリングさせていただきます。お気軽にお問い合わせください。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 10. お問い合わせ -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>お問い合わせ</h2>
-                <p>まずは無料経営診断から――次の一手を確かな手応えに。</p>
-            </div>
-            <div style="text-align: center;">
-                <a href="#" class="btn">無料経営診断を申し込む</a>
-            </div>
+    <!-- お問い合わせ -->
+    <section id="contact" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">お問い合わせ</h2>
+            <p class="text-xl mb-8 opacity-90">まずは無料経営診断から――次の一手を確かな手応えに。</p>
+            <a href="#" class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 inline-block">
+                無料経営診断を申し込む
+            </a>
         </div>
     </section>
 
     <!-- フッター -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>LOVANT<span>VICTORIA</span></h3>
-                    <p>AIコンサルティングサービス</p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        LOVANT<span class="text-primary">VICTORIA</span>
+                    </h3>
+                    <p class="text-gray-400">AIコンサルティングサービス</p>
                 </div>
-                <div class="footer-links">
-                    <h4>リンク</h4>
-                    <ul>
-                        <li><a href="#hero">トップ</a></li>
-                        <li><a href="#differentiation">強み</a></li>
-                        <li><a href="#team">メンバー紹介</a></li>
-                        <li><a href="company.html">会社概要</a></li>
-                        <li><a href="privacy.html">プライバシーポリシー</a></li>
-                        <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+                <div>
+                    <h4 class="font-bold mb-4">リンク</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#hero" class="hover:text-white transition-colors">トップ</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">強み</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">メンバー紹介</a></li>
+                        <li><a href="company.html" class="hover:text-white transition-colors">会社概要</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>お問い合わせ</h4>
-                    <div class="contact-info">
-                        <i>✉</i>
-                        <p>info@lovantvictoria.com</p>
-                    </div>
+                <div>
+                    <h4 class="font-bold mb-4">お問い合わせ</h4>
+                    <p class="text-gray-400">
+                        <i class="fas fa-envelope mr-2"></i>
+                        info@lovantvictoria.com
+                    </p>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 LOVANTVICTORIA All Rights Reserved.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LOVANTVICTORIA, inc. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // ハンバーガーメニューのトグル機能
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
+        // モバイルメニューの開閉
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
-            if (mobileMenu && navMenu) {
-                mobileMenu.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-            }
-
-            // スムーズスクロール
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-
-                    // モバイルメニューが開いている場合は閉じる
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                    }
-                });
-            });
-
-            // アコーディオン機能
-            const accordionItems = document.querySelectorAll('.accordion-item');
-
-            accordionItems.forEach(item => {
-                const title = item.querySelector('.accordion-title');
-                const content = item.querySelector('.accordion-content');
-                const icon = item.querySelector('.accordion-icon i');
-
-                title.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    const isExpanded = title.getAttribute('aria-expanded') === 'true';
-
-                    // 他のアコーディオンを閉じる
-                    accordionItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.accordion-title').setAttribute('aria-expanded', 'false');
-                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                            const otherIcon = otherItem.querySelector('.accordion-icon i');
-                            otherIcon.classList.remove('fa-minus');
-                            otherIcon.classList.add('fa-plus');
-                        }
-                    });
-
-                    // クリックされたアコーディオンの開閉
-                    if (isActive) {
-                        item.classList.remove('active');
-                        title.setAttribute('aria-expanded', 'false');
-                        content.style.maxHeight = null;
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                    } else {
-                        item.classList.add('active');
-                        title.setAttribute('aria-expanded', 'true');
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.classList.remove('fa-plus');
-                        icon.classList.add('fa-minus');
-                    }
-                });
+                }
             });
         });
+
+        // FAQ の開閉
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
     </script>
 </body>
 </html>
